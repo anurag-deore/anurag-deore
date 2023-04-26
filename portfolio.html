@@ -37,7 +37,7 @@
         }
 
         .item {
-            padding: 3px 10px;
+            padding: 0px 10px;
             border: 1px solid lightgray;
             color: #214057;
             margin-right: 10px;
@@ -47,7 +47,7 @@
             width: fit-content;
         }
 
-        .bi-img {
+        .header .bi-img {
             background: #ECF4F6;
             padding: 10px;
             border-radius: 50%;
@@ -56,9 +56,10 @@
             width: 40px;
         }
 
-        .bi {
+        .header .bi {
             background: #ECF4F6;
             padding: 5px 10px;
+            gap: 10px;
             border-radius: 50%;
             margin-right: 3px;
             color: #214057;
@@ -66,6 +67,30 @@
             margin-right: 5px;
         }
 
+        .findme_links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .findme_links .bi,
+        .findme_links .bi-img {
+            background: none;
+            padding: 0px;
+            gap: 10px;
+            border-radius: 50%;
+            margin-right: 3px;
+            width: 20px;
+            color: #214057;
+            font-size: 1.2rem;
+            margin-right: 5px;
+
+        }
+
+        .certi .bi{            
+            background: none;
+            padding: 0px;
+            color: auto;
+        }
         .headlink {
             text-decoration: none;
             color: inherit;
@@ -85,12 +110,14 @@
             top: 25%;
             background-color: #c7c7c7;
         }
-        .note{
+
+        .note {
             font-size: 8px;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             right: 50%;
         }
+
         /* timeline */
         .htlc {
             display: block;
@@ -98,11 +125,29 @@
             margin: 10px 5px;
         }
 
+        .htlc-2 {
+            display: block;
+            position: relative;
+            margin: 10px 0px;
+        }
+
         .tlhr {
             position: absolute;
+            top: 45%;
+            left: -38%;
+            width: 500px;
+            border: none;
+            opacity: 1 !important;
+            height: 3px;
+            background-color: #69A84F;
+            transform: rotate(-90deg);
+        }
+
+        .tlhr-2 {
+            position: absolute;
             top: 50%;
-            left: -189px;
-            width: 400px;
+            left: -89px;
+            width: 200px;
             border: none;
             opacity: 1 !important;
             height: 3px;
@@ -115,9 +160,10 @@
         .item-loc {
             margin: 0px 5px;
         }
-.item-title{
-    font-weight: 500;
-}
+
+        .item-title {
+            font-weight: 500;
+        }
 
         .htlc .tl-item {
             list-style: none;
@@ -153,8 +199,9 @@
             border-radius: 5px;
             padding: 5px 10px;
         }
-        .upper{
-            opacity: 0.2;
+
+        .upper {
+            opacity: 0.08;
             position: fixed;
             top: -100px;
             right: -50px;
@@ -162,12 +209,12 @@
     </style>
 </head>
 
-<body class="p-5">
+<body class="p-5 pt-4">
     <img src="ui.png" alt="" class="upper">
     <!-- <div class="container mt-5 text-center">
         <h1 class="fw-bold">Hello, world!</h1>
     </div> -->
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column header">
         <h1 class="head fw-bold">Anurag Deore</h1>
         <h4 class="pcolor fw-semibold">Full Stack Developer</h4>
         <div class="d-flex">
@@ -179,10 +226,10 @@
                 <i class="bi bi-telephone"></i>
                 <a class="headlink" href="tel:7506656227">+91 7506656227</a>
             </div>
-            <div class="d-flex align-items-center me-4">
+            <!-- <div class="d-flex align-items-center me-4">
                 <i class="bi bi-geo-alt"></i>
                 <span>Mumbai India</span>
-            </div>
+            </div> -->
         </div>
     </div>
     <br>
@@ -192,9 +239,10 @@
             <hr class="m-0">
             <div class="row">
                 <div class="col-9 d-flex flex-column justify-content-between my-1">
-                    <span class="fwsb">Bachelor of Engineering</span>
-                    <span>Computer Science</span>
-                    <span>University Of Mumbai</span>
+                    <div class="d-flex">
+                        <span class="fwsb me-3">Bachelor of Engineering - Computer Science</span>
+                    </div>
+                    <span class="pcolor fwsb">University Of Mumbai</span>
                     <span class="text-secondary">2017 - 2021</span>
                 </div>
                 <div class="col-3 d-flex flex-column justify-content-center align-items-center my-1 bdvert">
@@ -206,106 +254,124 @@
             <hr class="m-0">
             <div class="htlc">
                 <hr class="tlhr">
+                <div class="tl-item" ng-repeat="item in retailer_history">
+                    <div class="item-year ms-2">Since Oct 22</div>
+                    <div class="item-title">Full Stack Engineer</div>
+                    <div class="item-loc">Clootrack</div>
+                    <div class="item-detail">
+                        <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                            <li>Designed UI and Implemented frontend apps with React, TypeScript & Zustand.</li>
+                            <li>Utilized design patterns for optimal performance and analytical problem-solving skills.
+                            </li>
+                            <li>Integrated with backend tech like Django APIs and PostgresDB.</li>
+                            <li>Leveraged with Git/Github for version control.</li>
+                            <li>Developed apps with Docker and deployed on GCP for efficient development and
+                                deployment.</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="tl-item">
-                    <div class="item-year">Since Jul 2021</div>
+                    <div class="item-year">Jul 21 - Sep 22</div>
                     <div class="item-title">Senior Software Engineer</div>
                     <div class="item-loc">Larsen & Toubro Infotech</div>
                     <div class="item-detail">
                         <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
-                            <li>Trained and Certified on Full Stack & Devops Technologies.</li>
-                            <li>Developed fully responsive Web apps with React, Redux.</li>
-                            <li>Assisted seniors in developing restful APIs</li>
-                            <li>Collaborated with seniors developers to identify bugs and optimize performance.</li>
+                            <li>Achieved Full Stack & DevOps certifications, mastering a range of technologies.</li>
+                            <li>Designed and built visually stunning and user-friendly Web applications using React and
+                                Redux.</li>
+                            <li>Contributed to the development of efficient and scalable RESTful APIs under senior
+                                developer guidance.</li>
+                            <li>Worked closely with senior developers to identify and fix bugs, optimize application
+                                performance, and continuously improve code quality.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="tl-item" ng-repeat="item in retailer_history">
-                    <div class="item-year">Apr 21 - Jul 21</div>
+                    <div class="item-year ms-1">Apr 21 - Jul 21</div>
                     <div class="item-title">Full Stack Engineer</div>
                     <div class="item-loc">Softway Solutions</div>
                     <div class="item-detail">
                         <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
-                            <li>Part of the Product team to develop hybrid android, iOS & web apps using the Flutter
-                                Framework.</li>
-                            <li>Helped design mobile app & website UI screens and wireframes.</li>
-                            <li>Wrote both Integration and Unit tests for the app.</li>
-                            <li>Worked alongside 2 senior developers to analyze, estimate and ideate the solution for a
-                                Flask based ML application. </li>
+                            <li>Collaborated with the Product team to develop high-quality hybrid mobile and web apps
+                                using Flutter Framework.</li>
+                            <li>Assisted in creating stunning UI screens and wireframes for mobile apps and websites.
+                            </li>
+                            <li>Developed comprehensive integration and unit tests to ensure the smooth functioning of
+                                the app.</li>
+                            <li>Collaborated with a team of developers to analyze project requirements, estimate project
+                                scope, and ideate solutions for a Flask-based ML application.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h6 class="mt-2">INTERNSHIPS</h6>
+            <hr class="m-0">
+            <div class="htlc-2">
+                <div class="tl-item">
+                    <div class="item-title">Full Stack Developer Intern - <span
+                            class="pcolor fw-normal fst-italic">Pikkal & Co.</span></div>
+                    <div class="item-detail">
+                        <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                            <li>Boosted CMS platform performance and designed analytics dashboard frontend using
+                                ReactJS, Django, and jQuery.</li>
+                            <li>Managed and hosted site and MySQL DB resources on AWS cloud, aiding dev team.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="tl-item" ng-repeat="item in retailer_history">
-                    <div class="item-year">Jul 20 - Sep 20</div>
-                    <div class="item-title">Full Stack Developer Intern</div>
-                    <div class="item-loc">Pikkal & Co.</div>
+                    <div class="item-title">Software Developement Intern and Team Lead - <span
+                            class="pcolor fw-normal fst-italic">RAIT Internship</span></div>
                     <div class="item-detail">
                         <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
-                            <li>Used ReactJS, Django and jQuery to develop a CMS platform.</li>
-                            <li>Analyzed and optimized performance bottlenecks in existing django based backend systems.
-                            </li>
-                            <li>Assisted in managing and hosting the site and its Mysql DB and its resources on AWS
-                                cloud with the dev team.</li>
-                            <li>Designed frontend interfaces for an analytics dashboard & prototyped them.</li>
+                            <li>Number Plate detection from image, video or live cctv footage </li>
+                            <li>Utilized Python (Flask), YOLO, and Tesseract OCR for WebApp with object and text
+                                detection.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <h6>PROJECTS</h6>
-            <hr class="mt-0">
-            <div class="fwsb">SellIt MarketPlace App</div>
-            <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
-                <li>Marketplace app to List & sell old stuff. Built using React Native & Expo </li>
-            </ul>
-            <div class="fwsb">Golocal Job Portal</div>
-            <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
-                <li>Python-flask based webapp to find professionals near you. <a
-                        class="text-secondary text-decoration-none" href="https://g0l0cal.herokuapp.com">Live here.</a>
-                </li>
-            </ul>
-            <div class="fwsb">Data Visualization with D3.js</div>
-            <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
-                <li>Visualized various aspects of the Spotify song dataset by using the D3.js library.</li>
-            </ul>
-            <div style="font-size:14px;margin-top: -15px;">More projects on <a class="text-secondary"
-                    href="https://github.com/anurag-deore">github</a></div>
         </div>
         <div class="col-4">
             <h6>FIND ME ON</h6>
             <hr class="m-0">
-            <div class="d-flex align-items-center my-3">
-                <i class="bi bi-linkedin"></i>
-                <a class="headlink" href="https://www.linkedin.com/in/anurag-deore-4444321a0/">LinkedIn</a>
-            </div>
-            <div class="d-flex align-items-center my-3">
-                <i class="bi bi-github"></i>
-                <a class="headlink" href="https://github.com/anurag-deore">github.com/anurag-deore</a>
-            </div>
-            <div class="d-flex align-items-center my-3">
-                <i class="bi bi-dribbble"></i>
-                <a class="headlink" href="https://dribbble.com/anurag_d">dribbble.com/anurag_d</a>
-            </div>
-            <div class="d-flex align-items-center my-3">
-                <img src="fav.svg" class="bi-img">
-                <a class="headlink" href="https://www.credly.com/users/anurag-deore">Credly Badges</a>
+            <div class="d-flex-col mb-3 pt-2">
+                <div class="d-flex align-items-center findme_links">
+                    <i class="bi bi-linkedin"></i>
+                    <a class="headlink" href="https://www.linkedin.com/in/anurag-deore-4444321a0/">linkedIn.com</a>
+                </div>
+                <div class="d-flex align-items-center findme_links">
+                    <i class="bi bi-github"></i>
+                    <a class="headlink" href="https://github.com/anurag-deore">github.com/anurag-deore</a>
+                </div>
+                <div class="d-flex align-items-center findme_links">
+                    <i class="bi bi-dribbble"></i>
+                    <a class="headlink" href="https://dribbble.com/anurag_d">dribbble.com/anurag_d</a>
+                </div>
+                <div class="d-flex align-items-center findme_links">
+                    <img src="fav.svg" class="bi-img">
+                    <a class="headlink" href="https://www.credly.com/users/anurag-deore">Credly Badges</a>
+                </div>
             </div>
             <h6>SKILLS</h6>
             <hr class="m-0">
-            <h6 class="mt-2 mb-3 pcolor">Front-end Stack</h6>
+            <h6 class="mt-2 mb-2 pcolor fw-normal">Front-end Stack</h6>
             <div class="d-flex flex-wrap">
-                <div class="item">HTML</div>
-                <div class="item">CSS</div>
-                <div class="item">JS</div>
-                <div class="item">jQuery</div>
+                <div class="item">Javascript</div>
+                <div class="item">Typescript</div>
                 <div class="item">ReactJS</div>
+                <div class="item">Zustand</div>
                 <div class="item">Redux</div>
-                <div class="item">Bootstrap</div>
+                <div class="item">Tailwind CSS</div>
                 <div class="item">Ui/Ux</div>
                 <div class="item">SASS</div>
                 <div class="item">ReactNative</div>
                 <div class="item">Flutter</div>
+                <div class="item">jQuery</div>
+                <div class="item">HTML</div>
+                <div class="item">CSS</div>
                 <div class="item">D3.js</div>
             </div>
-            <h6 class="mb-3 pcolor">Back-end Stack</h6>
+            <h6 class="mb-2 pcolor fw-normal">Back-end Stack</h6>
             <div class="d-flex flex-wrap">
                 <div class="item">Python</div>
                 <div class="item">Django</div>
@@ -319,7 +385,7 @@
                 <div class="item">PHP</div>
                 <div class="item">Dart</div>
             </div>
-            <h6 class="mb-3 pcolor">Data</h6>
+            <h6 class="mb-2 pcolor fw-normal">Data</h6>
             <div class="d-flex flex-wrap">
                 <div class="item">AWS</div>
                 <div class="item">Firebase</div>
@@ -328,25 +394,47 @@
                 <div class="item">GCP</div>
                 <div class="item">DjangoORM</div>
             </div>
-            <h6 class="mb-3 pcolor">Developement Tools & Operations</h6>
+            <h6 class="mb-2 pcolor fw-normal">Developement Tools & Operations</h6>
             <div class="d-flex flex-wrap">
+                <div class="item">Agile</div>
                 <div class="item">FIGMA</div>
                 <div class="item">Git</div>
                 <div class="item">Gitlab/Github</div>
                 <div class="item">Linux</div>
-                <div class="item">Agile</div>
             </div>
 
-            <h6 class="mt-2">CERTIFICATIONS</h6>
+            <h6>PROJECTS</h6>
+            <hr class="mt-0">
+            <div class="fwsb">SellIt MarketPlace App</div>
+            <ul class="ps-3 concList" style="list-style-type: '&#x26AC;  ';">
+                <li>Marketplace app to List & sell old stuff. Built using React Native & Expo </li>
+            </ul>
+            <div class="fwsb">Golocal Job Portal</div>
+            <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                <li>Python-flask based webapp to find professionals near you. <a
+                        class="text-secondary text-decoration-none" href="https://g0l0cal.herokuapp.com">Live here.</a>
+                </li>
+            </ul>
+            <div class="fwsb">Data Visualization with D3.js</div>
+            <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                <li>Visualized various aspects of the Spotify song dataset by using the D3.js library.</li>
+            </ul>
+            <div class="pcolor" style="font-size:14px;margin-top: -15px;">More projects on <a class="text-primary"
+                    href="https://github.com/anurag-deore">github</a></div>
+
+            <h6 class="mt-3">CERTIFICATIONS</h6>
             <hr class="m-0">
             <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
-                <li class="my-2">AWS Academy Graduate</li>
-                <li class="my-2">LTI Certified Full Stack Developer</li>
+                <li class="my-2">LTI Certified Full Stack Developer<a target="_blank" href="https://drive.google.com/file/d/16RrxunYNAil3gx2rHH93DF-eSj1KtbVw/view?usp=share_link"><i class="bi bi-link-45deg"></i></a></li>
+                <li class="my-2 certi">Azure AZ-900 Certified <a target="_blank" href="https://drive.google.com/file/d/172b02EanUDGMi0jvsy23a19ys0BEw6iw/view?usp=share_link"><i class="bi bi-link-45deg"></i></a></li>
                 <li class="my-2">Cisco Devnet Associate</li>
+                <li class="my-2">AWS Academy Graduate</li>
             </ul>
         </div>
     </div>
-    <small class="note">Resume Coded with HTML & CSS. &#x276E;Code Here&#x2f;&#x276F;</small>
+    <small class="note">Resume Coded with HTML & CSS.<a class="text-secondary text-decoration-none"
+            href="https://github.com/anurag-deore/anurag-deore/blob/main/portfolio.html">&#x276E;Code
+            Here&#x2f;&#x276F;</a></small>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
