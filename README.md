@@ -1,4 +1,4 @@
-- 👋 Hi, I’m Anurag, I love fixing stuff.
+👋 Hi, I’m Anurag, I love fixing stuff.
 
 <!---
 - 🙋🏻‍♂️ Portfolio : <a href="https://anurag-deore.github.io">anurag-deore.github.io</a>
